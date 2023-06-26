@@ -4,6 +4,7 @@ using MagicVilla_API.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MagicVilla_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230626164811_villaNumbers")]
+    partial class villaNumbers
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -70,27 +73,27 @@ namespace MagicVilla_API.Migrations
                         {
                             Id = 1,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 6, 26, 12, 4, 23, 865, DateTimeKind.Local).AddTicks(5670),
+                            CreationDate = new DateTime(2023, 6, 26, 11, 48, 11, 692, DateTimeKind.Local).AddTicks(6510),
                             Detail = "Detalle de la villa..",
                             ImageUrl = "",
                             Name = "Villa Real",
                             Occupants = 5,
                             Price = 200.0,
                             SquareMeters = 50,
-                            UpdateDate = new DateTime(2023, 6, 26, 12, 4, 23, 865, DateTimeKind.Local).AddTicks(5690)
+                            UpdateDate = new DateTime(2023, 6, 26, 11, 48, 11, 692, DateTimeKind.Local).AddTicks(6540)
                         },
                         new
                         {
                             Id = 2,
                             Amenity = "",
-                            CreationDate = new DateTime(2023, 6, 26, 12, 4, 23, 865, DateTimeKind.Local).AddTicks(5700),
+                            CreationDate = new DateTime(2023, 6, 26, 11, 48, 11, 692, DateTimeKind.Local).AddTicks(6550),
                             Detail = "Detalle de la villa..",
                             ImageUrl = "",
                             Name = "Premium vista a la piscina",
                             Occupants = 4,
                             Price = 150.0,
                             SquareMeters = 40,
-                            UpdateDate = new DateTime(2023, 6, 26, 12, 4, 23, 865, DateTimeKind.Local).AddTicks(5700)
+                            UpdateDate = new DateTime(2023, 6, 26, 11, 48, 11, 692, DateTimeKind.Local).AddTicks(6550)
                         });
                 });
 
@@ -107,8 +110,7 @@ namespace MagicVilla_API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdateTime")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("UpdateDate");
+                        .HasColumnType("datetime2");
 
                     b.Property<int>("VillaId")
                         .HasColumnType("int");
